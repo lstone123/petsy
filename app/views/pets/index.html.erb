@@ -2,13 +2,14 @@
 <ul>
 <% @pets.each do |pet| %>
       <li>
-        <%= link_to pet.name, pet_path(pet[:id]) %>
-        <%= link_to "Delete",
+        <h2><%= link_to pet.name, pet_path(pet[:id]) %></h2>
+        <%= link_to "Remove this pet from your list",
             pet_path(pet[:id]),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning"
             %>
       </li>
     <% end %>
 </ul>
 
-<%= link_to "Add one of your pet's to the list", new_pet_path, class: "btn btn-primary" %>
+<%= link_to "Add one of your pet's to the list", new_pet_path, class: "btn btn-success" %>
+

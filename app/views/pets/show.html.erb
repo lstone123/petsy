@@ -1,9 +1,9 @@
-<h1>Your Pet</h1>
 
-<%= @pet.name %>
-<%= @pet.species %>
-<%= @pet.age %>
-<%= @pet.description %>
-<%= @pet.requirements %>
+<h1><%= @pet.name %></h1>
+<p><strong>Species:</strong> <%= @pet.species %></p>
+<p><strong>Age:</strong> <%= @pet.age %></p>
+<p> <strong>Description:</strong> <%= @pet.description %></p>
+<p> <strong>Requirements:</strong>   <%= @pet.requirements %></p>
 
-<%= link_to "Change your pet's details", edit_pet_path %>
+<%= link_to "Change your pet's details", edit_pet_path, class: "btn btn-success"%>
+<%= link_to "View all your pets", pets_path, class: "btn btn-success"%>
