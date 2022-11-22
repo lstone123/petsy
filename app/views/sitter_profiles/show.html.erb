@@ -1,0 +1,11 @@
+<h2>Name: <%= @sitter_profile.user.first_name %> <%= @sitter_profile.user.last_name %></h2>
+<p> I can take care of the following animals: <%= @sitter_profile.species_preference %>
+<p> I am based in: <%= @sitter_profile.user.location %></p>
+<p>A bit more about me: <%= @sitter_profile.description %></p>
+
+
+
+<p>
+  <%= link_to "Edit Profile", edit_sitter_profile_path %>
+  <%= link_to "See all Profiles", sitter_profiles_path %>
+</p>

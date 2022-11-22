@@ -1,0 +1,14 @@
+<h2> Edit your Profile </h2>
+
+<%= form_with model: @sitter_profile do |f| %>
+  <%= f.label :species_preference %>
+  <%= f.text_field :species_preference %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>
+
+
+<div>
+  <%= link_to "Back to my Profile", sitter_profile_path %>
+</div>

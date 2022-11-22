@@ -1,0 +1,11 @@
+
+
+<ul>
+  <% @sitter_profiles.each do |sitter_profile| %>
+    <li><%= link_to sitter_profile.user.first_name, sitter_profile_path(sitter_profile) %></li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "See all Profiles", sitter_profiles_path %>
+</p>

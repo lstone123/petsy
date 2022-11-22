@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   devise_for :users
   # resources :users do
-  resources :sitter_profiles, only: %i[index show] do
+  resources :sitter_profiles do
     resources :bookings, only: %i[edit update destroy]
   end
   resources :pets
@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # get "sitter_profile", to: "sitter_profile#index", as: "sitter_profile"
 end
