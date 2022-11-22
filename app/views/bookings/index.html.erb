@@ -1,0 +1,29 @@
+<h1>My Bookings</h1>
+
+<div>
+  <% @bookings.each do |booking| %>
+    <%if current_user.sitter == false %>
+      <p>Pet Sitter Name: <%= booking.sitter_profile.user.first_name %> <%= booking.sitter_profile.user.last_name %></p>
+      <p>Start date:<%= booking.start_date %></p>
+      <p>End date: <%= booking.end_date %></p>
+      <p>Booking confirmed?
+        <% if booking.confirmed? %>
+          <%= "☑️" %>
+        <% else %>
+          <%= "🔲" %>
+        </p>
+        <% end %>
+    <% else %>
+      <p>Owner Name: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+      <p>Start date:<%= booking.start_date %></p>
+      <p>End date: <%= booking.end_date %></p>
+      <p>Booking confirmed?
+        <% if booking.confirmed? %>
+          <%= "☑️" %>
+        <% else %>
+          <%= "🔲" %>
+        </p>
+        <% end %>
+    <% end %>
+  <% end %>
+</div>

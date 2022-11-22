@@ -1,0 +1,16 @@
+<%= simple_form_for [@pet_sitter, @booking] do |f| %>
+  <% if current_user.id == @pet_sitter.id %>
+    <%= @booking.owner_message %>
+    <%= f.input :sitter_message %>
+    <%= @booking.start_date %>
+    <%= @booking.end_date %>
+    <%= f.button :submit %>
+  <% else %>
+    <%= f.input :owner_message %>
+    <%= @booking.sitter_message %>
+    <%= @booking.start_date %>
+    <%= @booking.end_date %>
+    <%= f.input :confirmed %>
+    <%= f.button :submit %>
+    <% end %>
+  <% end %>
