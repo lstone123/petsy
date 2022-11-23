@@ -1,0 +1,38 @@
+<h1>Manage your booking with
+  <% if current_user.sitter == true %>
+    owner, <%= @owner.first_name %> <%= @owner.last_name %>
+  <% else %>
+    pet sitter, <%=@pet_sitter.user.first_name %> <%= @pet_sitter.user.last_name %>
+  <% end %>
+</h1>
+
+
+<%= simple_form_for [@pet_sitter, @booking] do |f| %>
+  <div><% if current_user.sitter == true %>
+      <div><%= "Owner Name:" %>
+        <%= @owner.first_name %> <%= @owner.last_name %></div>
+      <div><%= "Owner Message:" %>
+        <%= @booking.owner_message %></div>
+      <div><%= "Booking Start Date:" %>
+        <%= @booking.start_date %></div>
+      <div><%= "Booking End Date:" %>
+        <%= @booking.end_date %></div>
+      <%= f.input :sitter_message %>
+      <%= f.button :submit %>
+      <%= link_to "Go back", booking_path(@booking) %>
+    </div>
+  <% else %>
+    <div>
+      <%= f.input :owner_message %>
+      <div><%= "Sitter Message:" %>
+        <%= @booking.sitter_message %></div>
+      <div><%= "Booking Start Date:" %>
+        <%= @booking.start_date %></div>
+      <div><%= "Booking End Date:" %>
+        <%= @booking.end_date %></div>
+      <%= f.input :confirmed %>
+      <%= f.button :submit %>
+      <%= link_to "Go back", booking_path(@booking) %>
+    </div>
+    <% end %>
+  <% end %>
