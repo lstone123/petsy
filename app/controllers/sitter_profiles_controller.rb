@@ -9,8 +9,20 @@ class SitterProfilesController < ApplicationController
   def index
     if params[:query].present?
       @sitter_profiles = SitterProfile.where(species_preference: params[:query])
+      @markers = @sitter_profiles.geocoded.map do |sitter_profile|
+        {
+          lat: sitter_profile.latitude,
+          lng: sitter_profile.longitude
+        }
+      end
     else
       @sitter_profiles = SitterProfile.all
+      @markers = @sitter_profiles.geocoded.map do |sitter_profile|
+        {
+          lat: sitter_profile.latitude,
+          lng: sitter_profile.longitude
+        }
+      end
     end
   end
 
