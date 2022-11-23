@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   # resources :users do
   resources :sitter_profiles, only: %i[index show] do
-    resources :bookings, only: %i[edit update destroy]
+    resources :bookings, only: %i[new create edit update]
   end
   resources :pets
-  resources :bookings, only: %i[index show new create]
+  resources :bookings, only: %i[index show destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

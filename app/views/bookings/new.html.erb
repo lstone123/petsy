@@ -1,0 +1,8 @@
+<h1>Make a booking with <%= @pet_sitter.user.first_name %></h1>
+
+<%= simple_form_for [@pet_sitter, @booking] do |f| %>
+  <%= f.input :owner_message %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit %>
+  <% end %>
