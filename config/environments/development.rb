@@ -34,6 +34,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
+  # COMMENT out line below when changing to development hosting (Heroku) and COMMENT in the :cloudinary line
   # config.active_storage.service = :local
   config.active_storage.service = :cloudinary
 
