@@ -1,0 +1,10 @@
+<h1>Add a pet</h1>
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species, collection: %w(dog cat bird reptile) %>
+  <%= f.input :age %>
+  <%= f.input :description %>
+  <%= f.input :requirements %>
+  <%= f.submit class: "btn btn-success" %>
+  <%= link_to "View all your pets", pets_path, class: "btn btn-success"%>
+<% end %>
