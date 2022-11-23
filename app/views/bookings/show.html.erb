@@ -36,6 +36,7 @@
       </p>
         <% end %>
       <%= link_to "Update this booking", edit_sitter_profile_booking_path(@booking.sitter_profile) %>
+      <%= link_to "Go back to all bookings", bookings_path %>
     <p><%= @booking.completed %></p>
   <% end %>
 </div>
