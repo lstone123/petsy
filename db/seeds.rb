@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 SitterProfile.destroy_all
 Pet.destroy_all
 User.destroy_all
 puts "destroying the db"
-
 
 dog_owner = User.create(email: 'testemail@test.com', password: 123456, first_name: 'Bob', last_name: 'Jones', sitter: false)
 puts "I am creating a new user"
