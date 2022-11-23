@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FC5185;
+  background-color: #3FC1C9;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -47,24 +47,56 @@
   justify-content: space-between;
 }
 
-// .card-map {
-
-// }
-
 .container {
   margin: 20px 20px;
 }
 
+.animal-search-card-container {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 15px;
+  justify-content: space-between;
+  margin: 10px 30px 20px 30px;
+}
 
+.animal-search-card-h2 {
+ font-size: 24px;
+}
 
-// .my-class {
-// position: absolute;
-// transform: scale(0);
-// }
+.animal-search-card-button-container {
+  border-radius: 10px;
+  flex-direction: row;
+  padding: 15px;
+  justify-content: space-between;
+}
 
-// .my-class + label {
-//   cursor:pointer;
-//  /* Button look here */
-//   }
+.animal-search-card {
+  position: absolute;
+  transform: scale(0);
+}
 
-// .my-class:checked + label {}
+.animal-search-card + label {
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FC5185;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10%;
+  padding: 20px;
+}
+
+.animal-search-card + label img {
+  width: 60px;
+  height: 60px;
+}
+
+.animal-search-card:checked + label {
+  background-color: #fb0b53;
+}
