@@ -1,0 +1,70 @@
+.card-profile-container {
+  justify-content: space-between;
+  margin: 30px 30px;
+}
+
+.card-profile {
+  background-size: cover;
+  width: 150px;
+  background-position: center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FC5185;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10%;
+  padding: 20px;
+}
+
+.card-profile a {
+  text-decoration: none;
+  color: white
+}
+
+.card-profile img {
+  width: 20px;
+  height: 20px;
+}
+
+.card-profile p {
+  text-decoration: none;
+  color: white;
+  font-size: 16px
+}
+
+.card-profile .profile-location {
+  display: flex
+}
+
+
+.card-map-container {
+  margin: 30px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+// .card-map {
+
+// }
+
+.container {
+  margin: 20px 20px;
+}
+
+
+
+// .my-class {
+// position: absolute;
+// transform: scale(0);
+// }
+
+// .my-class + label {
+//   cursor:pointer;
+//  /* Button look here */
+//   }
+
+// .my-class:checked + label {}
