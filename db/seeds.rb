@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+SitterProfile.destroy_all
+Pet.destroy_all
 User.destroy_all
-puts "destroying the user db"
+puts "destroying the db"
+
 dog_owner = User.create(email: 'testemail@test.com', password: 123456, first_name: 'Bob', last_name: 'Jones', sitter: false)
 puts "I am creating a new user"
 dog_owner1 = User.create(email: 'testemail1@test.com', password: 123456, first_name: 'Sally', last_name: 'Smith', sitter: false)
@@ -24,9 +27,11 @@ sitter3 = User.create(email: 'testemail6@test.com', password: 123456, first_name
 puts "I am creating a new user"
 sitter4 = User.create(email: 'testemail7@test.com', password: 123456, first_name: 'Ziggy', last_name: 'Bartkevicius', sitter: true)
 puts "I am creating a new user"
+
 Pet.create(description: "This is a dog", species: "dog", age: "2", requirements: "none", name: "Laura", user_id: dog_owner.id)
 Pet.create(description: "This is a dog", species: "dog", age: "2", requirements: "none", name: "Anna", user_id: dog_owner1.id)
 Pet.create(description: "This is a dog", species: "dog", age: "2", requirements: "none", name: "Jess", user_id: dog_owner2.id)
+
 SitterProfile.create(user_id: sitter.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet")
 SitterProfile.create(user_id: sitter1.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet")
 SitterProfile.create(user_id: sitter2.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet")

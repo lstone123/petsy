@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   # resources :users do
   resources :sitter_profiles do
     resources :bookings, only: %i[edit update destroy]
+
   end
   resources :pets
-  resources :bookings, only: %i[index show new create]
+  resources :bookings, only: %i[index show destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
