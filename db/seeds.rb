@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+Booking.destroy_all
 SitterProfile.destroy_all
 Pet.destroy_all
 User.destroy_all
@@ -32,8 +32,8 @@ Pet.create(description: "This is a dog", species: "dog", age: "2", requirements:
 Pet.create(description: "This is a dog", species: "dog", age: "2", requirements: "none", name: "Anna", user_id: dog_owner1.id)
 Pet.create(description: "This is a dog", species: "dog", age: "2", requirements: "none", name: "Jess", user_id: dog_owner2.id)
 
-SitterProfile.create(user_id: sitter.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet")
-SitterProfile.create(user_id: sitter1.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet")
-SitterProfile.create(user_id: sitter2.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet")
-SitterProfile.create(user_id: sitter3.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet")
+SitterProfile.create(user_id: sitter.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet", address: "10 Downing Street")
+SitterProfile.create(user_id: sitter1.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet", address: "Buckingham Palace")
+SitterProfile.create(user_id: sitter2.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet", address: "N1 6NG")
+SitterProfile.create(user_id: sitter3.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet", address: "Windsor Castle")
 SitterProfile.create(user_id: sitter4.id, species_preference: "dog", description: "I have looked after dogs for 3 years and would love to look after your pet")

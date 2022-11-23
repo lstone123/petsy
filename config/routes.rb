@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   # resources :users do
   resources :sitter_profiles do
-    resources :bookings, only: %i[edit update destroy]
+    resources :bookings, only: %i[new create edit update]
 
   end
   resources :pets
