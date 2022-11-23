@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :sitter_profiles, through: :bookings
   validates :first_name, presence: true
   validates :last_name, presence: true
+  attr_accessor :pet_owner
+
   # validates :location, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
