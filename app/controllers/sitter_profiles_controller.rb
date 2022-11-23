@@ -1,6 +1,17 @@
 class SitterProfilesController < ApplicationController
+
+  # before_action :set_sitter_profile, only: [:show, :edit, :update, :destroy]
+
+  # def index
+  #   @sitter_profiles = SitterProfile.all
+  # end
+
   def index
-    @sitter_profiles = SitterProfile.all
+    if params[:query].present?
+      @sitter_profiles = SitterProfile.where(species_preference: params[:query])
+    else
+      @sitter_profiles = SitterProfile.all
+    end
   end
 
   def show
@@ -14,7 +25,7 @@ class SitterProfilesController < ApplicationController
   def create
     @sitter_profile = SitterProfile.new(sitter_profile_params)
     @sitter_profile.user_id = current_user.id
-    if @sitter_profile.save
+    if @sitter_profile.save!
       redirect_to sitter_profile_path(@sitter_profile)
     else
       render :new, status: :unprocessable_entity
@@ -42,7 +53,11 @@ class SitterProfilesController < ApplicationController
 
   private
 
+  def set_sitter_profile
+    @sitter_profile = SitterProfile.find(params[:id])
+  end
+
   def sitter_profile_params
-    params.require(:sitter_profile).permit(:species_preference, :description)
+    params.require(:sitter_profile).permit(:species_preference, :description, :address)
   end
 end
