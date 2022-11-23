@@ -1,7 +1,41 @@
-<h1>Welcome to the show page</h1>
+<h1>Your booking with
+  <% if current_user.sitter == true  %>
+   <%= @booking.user.first_name %> <%= @booking.user.last_name %>
+  <% else %>
+    <%= @booking.sitter_profile.user.first_name %> <%= @booking.sitter_profile.user.last_name %>
+  <% end %>
+</h1>
 
-<%= @booking.sitter_profile.name %>
-<%= @booking.start_date %>
-<%= @booking.end_date %>
-<%= @booking.confirmed %>
-<%= @booking.completed %>
+<div>
+  <% if current_user.sitter == true %>
+      <p>Owner name: <%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
+      <p>Owner message: <%= @booking.owner_message %></p>
+      <p>Start date: <%= @booking.start_date %></p>
+      <p>End Date: <%= @booking.end_date %></p>
+      <p>Your response: <%= @booking.sitter_message %></p>
+      <p>Owner confirmed?
+        <% if @booking.confirmed? %>
+          <%= "☑️" %>
+        <% else %>
+          <%= "🔲" %>
+      </p>
+        <% end %>
+      <%= link_to "Update this booking", edit_sitter_profile_booking_path(@booking.sitter_profile.user) %>
+      <%= link_to "Go back to all bookings", bookings_path %>
+  <% else %>
+    <p>Pet sitter name: <%= @booking.sitter_profile.user.first_name %> <%= @booking.sitter_profile.user.last_name %></p>
+    <p>Start date: <%= @booking.start_date %></p>
+    <p>End date: <%= @booking.end_date %></p>
+    <p>Your message: <%= @booking.owner_message %></p>
+    <p>Sitter message: <%= @booking.sitter_message %></p>
+    <p>Booking confirmed?
+        <% if @booking.confirmed? %>
+          <%= "☑️" %>
+        <% else %>
+          <%= "🔲" %>
+      </p>
+        <% end %>
+      <%= link_to "Update this booking", edit_sitter_profile_booking_path(@booking.sitter_profile) %>
+    <p><%= @booking.completed %></p>
+  <% end %>
+</div>

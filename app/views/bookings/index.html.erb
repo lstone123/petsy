@@ -11,12 +11,18 @@
           <%= "☑️" %>
         <% else %>
           <%= "🔲" %>
-        </p>
+      </p>
         <% end %>
+      <div>
+        <%= link_to "view this booking", booking_path(booking) %>
+        <%= link_to "delete this booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" } %>
+      </div>
     <% else %>
       <p>Owner Name: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-      <p>Start date:<%= booking.start_date %></p>
+      <p>Owner Message: <%= booking.owner_message %></p>
+      <p>Start date: <%= booking.start_date %></p>
       <p>End date: <%= booking.end_date %></p>
+      <p>Response: <%= booking.sitter_message %></p>
       <p>Booking confirmed?
         <% if booking.confirmed? %>
           <%= "☑️" %>
@@ -24,6 +30,10 @@
           <%= "🔲" %>
         </p>
         <% end %>
+      <div>
+        <%= link_to "view this booking", booking_path(booking) %>
+        <%= link_to "delete this booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" } %>
+      </div>
     <% end %>
   <% end %>
 </div>
