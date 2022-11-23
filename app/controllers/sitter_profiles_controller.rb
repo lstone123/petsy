@@ -34,10 +34,15 @@ class SitterProfilesController < ApplicationController
     end
   end
 
+  def destroy
+    @sitter_profile = SitterProfile.find(params[:id])
+    @sitter_profile.destroy
+    redirect_to sitter_profiles_path(@sitter_profile)
+  end
+
   private
 
   def sitter_profile_params
     params.require(:sitter_profile).permit(:species_preference, :description)
   end
-
 end

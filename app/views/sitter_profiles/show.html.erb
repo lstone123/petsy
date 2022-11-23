@@ -6,6 +6,8 @@
 
 
 <p>
+<%= link_to "Delete", sitter_profile_path(@sitter_profile),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <%= link_to "Edit Profile", edit_sitter_profile_path %>
   <%= link_to "See all Profiles", sitter_profiles_path %>
 </p>
