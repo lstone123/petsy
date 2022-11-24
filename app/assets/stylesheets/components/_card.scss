@@ -1,20 +1,27 @@
 // overall page container
 .container {
-  margin: 20px auto;
+  margin: 0px auto auto auto;
   max-width: 1000px;
 }
 
+// banner
+.home-page-banner-container{
+  height: 200px;
+}
 .home-page-banner {
-  background-image: url("example.jpg");
+  background-image: url("pets banner.jpeg");
   background-size: cover;
+  height: 200px;
 }
 
 // intro line
 .intro-description-h2 {
   display: flex;
   align-content: center;
-  justify-content: space-around;
-  color: #575757;
+  align-items: center;
+  justify-content: flex-start;
+  color: #FC5185;
+  width: 500px;
 }
 
 // location search card
@@ -60,7 +67,6 @@
   border-radius: 10px;
   flex-direction: column;
   background-color: white;
-  // padding: 15px;
   justify-content: space-between;
   margin: 10px 10px 20px 10px;
 }
@@ -153,6 +159,3 @@
 .card-profile .profile-location {
   display: flex
 }
-
-
-//BACKGROUND
