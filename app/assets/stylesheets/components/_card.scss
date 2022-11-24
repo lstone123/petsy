@@ -1,6 +1,120 @@
+// overall page container
+.container {
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+.home-page-banner {
+  background-image: url("example.jpg");
+  background-size: cover;
+}
+
+// intro line
+.intro-description-h2 {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  color: #575757;
+}
+
+// location search card
+.location-search-card-container {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  justify-content: space-between;
+  align-content: center;
+  margin: 10px 10px 20px 10px;
+}
+
+.location-search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-button{
+  display: flex;
+  color: white
+}
+// map and profile overall container
+.card-location-container {
+  background-color: white;
+  display: flex;
+  margin: 10px 10px 20px 10px;
+  border-radius: 10px;
+}
+
+// map container
+.card-map-container {
+  margin: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+// animal search card
+.animal-search-card-container {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: white;
+  // padding: 15px;
+  justify-content: space-between;
+  margin: 10px 10px 20px 10px;
+}
+
+.animal-search-card-h2 {
+  margin: 10px 0px 0px 10px;
+  font-size: 24px;
+  color: #575757;
+}
+
+.animal-search-card-button-container {
+  border-radius: 10px;
+  flex-direction: row;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.animal-search-card {
+  position: absolute;
+  transform: scale(0);
+}
+
+.animal-search-card + label {
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FC5185;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10%;
+  padding: 20px;
+}
+
+.animal-search-card + label img {
+  width: 60px;
+  height: 60px;
+}
+
+.animal-search-card:checked + label {
+  background-color: #fb0b53;
+}
+
+
+// sitter card profiles
 .card-profile-container {
   justify-content: space-between;
-  margin: 30px 30px;
+  margin: 10px 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card-profile {
@@ -41,62 +155,4 @@
 }
 
 
-.card-map-container {
-  margin: 30px 30px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.container {
-  margin: 20px 20px;
-}
-
-.animal-search-card-container {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  flex-direction: column;
-  padding: 15px;
-  justify-content: space-between;
-  margin: 10px 30px 20px 30px;
-}
-
-.animal-search-card-h2 {
- font-size: 24px;
-}
-
-.animal-search-card-button-container {
-  border-radius: 10px;
-  flex-direction: row;
-  padding: 15px;
-  justify-content: space-between;
-}
-
-.animal-search-card {
-  position: absolute;
-  transform: scale(0);
-}
-
-.animal-search-card + label {
-  cursor: pointer;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #FC5185;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10%;
-  padding: 20px;
-}
-
-.animal-search-card + label img {
-  width: 60px;
-  height: 60px;
-}
-
-.animal-search-card:checked + label {
-  background-color: #fb0b53;
-}
+//BACKGROUND
