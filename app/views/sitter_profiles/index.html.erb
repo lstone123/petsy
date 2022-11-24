@@ -1,26 +1,70 @@
+<div class="container">
 
-<p>
-<%= form_with url: sitter_profiles_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Which animal needs a sitter?"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+<%= form_with url: sitter_profiles_path, method: :get, class: "d-flex flex-column" do %>
+<div>
+  <p>
+    <div class="animal-search-card-container d-flex">
+
+    <div> <h2 class="animal-search-card-h2"> Who needs a sitter? </h2> </div>
+
+      <div class="animal-search-card-button-container d-flex">
+        <div>
+          <%= radio_button_tag 'animal', 'cat', params[:animal] == 'cat', class: 'animal-search-card', :id => 'species-cat' %>
+          <label for="species-cat">
+            <%= image_tag "cat.png" %>
+          </label>
+        </div>
+
+        <div>
+          <%= radio_button_tag 'animal', 'dog', params[:animal] == 'dog', class: 'animal-search-card', :id => 'species-dog' %>
+          <label for="species-dog">
+            <%= image_tag "dog.png" %>
+          </label>
+        </div>
+
+        <div>
+          <%= radio_button_tag 'animal', 'reptile', params[:animal] == 'reptile', class: 'animal-search-card', :id => 'species-reptile' %>
+          <label for="species-reptile">
+            <%= image_tag "lizard.png" %>
+          </label>
+        </div>
+
+        <div>
+          <%= radio_button_tag 'animal', 'bird', params[:animal] == 'bird', class: 'animal-search-card', :id => 'species-bird' %>
+          <label for="species-bird">
+            <%= image_tag "parrot (2).png" %>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  </p>
+</div>
+
 <% end %>
-</p>
 
-<ul>
-  <% @sitter_profiles.each do |sitter_profile| %>
-    <li><%= link_to sitter_profile.user.first_name, sitter_profile_path(sitter_profile) %></li>
-  <% end %>
-</ul>
+<div class="card-map-container">
+  <div style="width: 50%; height: 400px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
 
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-<p>
-  <%= link_to "See all Profiles", sitter_profiles_path %>
-</p>
+  <div class="card-profile-container d-flex">
+    <% @sitter_profiles.each do |sitter_profile| %>
+      <div class="card-profile">
+        <div>
+          <%= link_to sitter_profile.user.first_name, sitter_profile_path(sitter_profile) %>
+          <div class="profile-location"><p><%= sitter_profile.address %></p> <%= image_tag "placeholder.png" %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <p>
+    <%# <%= link_to "See all Profiles", sitter_profiles_path %>
+  </p>
+</div>
