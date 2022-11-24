@@ -1,14 +1,25 @@
-<h2>Name: <%= @sitter_profile.user.first_name %> <%= @sitter_profile.user.last_name %></h2>
-<p> I can take care of the following animals: <%= @sitter_profile.species_preference %>
-<p> My address: <%= @sitter_profile.address %></p>
-<p>A bit more about me: <%= @sitter_profile.description %></p>
+<div class="main">
+<div class="profile-info">
+<div class="profile-text">
+  <br>
+  <h2>Hey, I'm <%= @sitter_profile.user.first_name %> <%= @sitter_profile.user.last_name %></h2>
+  <br>
+  <p><%= @sitter_profile.address %></p>
+  <br>
+  <p> I can take care of the following animals: <%= @sitter_profile.species_preference %>
+  <p><h2>Bio</h2><%= @sitter_profile.description %></p>
+  </div>
+  </div>
+  <%= image_tag "profile.JPG", style: "width: 200px" %>
+</div>
 
-
-
-<p>
-<%# <%= link_to "Delete", sitter_profile_path(@sitter_profile),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <%# <%= link_to "Edit Profile", edit_sitter_profile_path %>
-  <%= link_to "See all Profiles", sitter_profiles_path %>
-  <%= link_to "Book with #{@sitter_profile.user.first_name}",  new_sitter_profile_booking_path(@sitter_profile)%>
-</p>
+<div class="container">
+  <p>
+  <%# <%= link_to "Delete", sitter_profile_path(@sitter_profile),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <%# <%= link_to "Edit Profile", edit_sitter_profile_path %>
+    <div><%= link_to "See all Profiles", sitter_profiles_path, class: "btn btn-primary text-white" %></div>
+    <br>
+    <div><%= link_to "Book with #{@sitter_profile.user.first_name}",  new_sitter_profile_booking_path(@sitter_profile), class: "btn btn-primary text-white"%></div>
+  </p>
+</div>
