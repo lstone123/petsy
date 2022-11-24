@@ -1,3 +1,4 @@
+// import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
@@ -16,12 +17,15 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    this.#openInfoWindow()
   }
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(this.map)
     })
   }
@@ -30,5 +34,21 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
+
+  #openInfoWindow(){
+    // Select all cards
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+      // Put a microphone on each card listening for a mouseenter event
+      card.addEventListener('mouseenter', () => {
+        // Here we trigger the display of the corresponding marker infoWindow with the "togglePopup" function provided by mapbox-gl
+        this.markersValue[index].togglePopup();
+      });
+      // We also put a microphone listening for a mouseleave event to close the modal when user doesn't hover the card anymore
+      card.addEventListener('mouseleave', () => {
+        this.markersValue.markers[index].togglePopup();
+      });
+    });
   }
 }

@@ -1,9 +1,23 @@
+<div class="super-container">
+  <div class="pet-card-container">
+    <div class="pet-card-img">
+    <%= image_tag "dog.png" %>
+    </div>
+    <div class="pet-card">
+      <h1>Name: <%= @pet.name %></h1>
+      <p><strong>Species:</strong> <%= @pet.species %></p>
+      <p><strong>Age:</strong> <%= @pet.age %></p>
+      <p> <strong>Description:</strong> <%= @pet.description %></p>
+      <p> <strong>Requirements:</strong>   <%= @pet.requirements %></p>
+      <br>
+      <%= link_to "Change your pet's details", edit_pet_path, class: "btn btn-success"%>
+      <%= link_to "View all your pets", pets_path, class: "btn btn-success"%>
+    </div>
+  </div>
 
-<h1><%= @pet.name %></h1>
-<p><strong>Species:</strong> <%= @pet.species %></p>
-<p><strong>Age:</strong> <%= @pet.age %></p>
-<p> <strong>Description:</strong> <%= @pet.description %></p>
-<p> <strong>Requirements:</strong>   <%= @pet.requirements %></p>
-
-<%= link_to "Change your pet's details", edit_pet_path, class: "btn btn-success"%>
-<%= link_to "View all your pets", pets_path, class: "btn btn-success"%>
+  <div class="pet-img-container">
+    <div>  <%= image_tag "dog.png", height: "100px"; %>  </div>
+    <div>  <%= image_tag "dog.png", height: "100px"; %>  </div>
+    <div>  <%= image_tag "dog.png", height: "100px"; %>  </div>
+  </div>
+</div>
