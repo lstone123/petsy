@@ -1,3 +1,9 @@
+<div class="home-page-banner-container">
+  <div class="home-page-banner">
+  <div> <h2 class="intro-description-h2">  Here to help your loved one find their perfect sitter </h2> </div>
+  </div>
+</div>
+
 <div class="container">
 
 <%= form_with url: sitter_profiles_path, method: :get, class: "d-flex flex-column" do %>
@@ -37,23 +43,23 @@
         </div>
       </div>
     </div>
-
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  </p>
-</div>
-
+    </p>
 <% end %>
 
-<div class="card-map-container">
-  <div style="width: 50%; height: 400px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+<div class="location-search-card-container">
+    <div class="location-search-box"> input location search here </div>
+    <div class="search-button"><%= submit_tag "Search", class: "btn btn-primary" %> </div>
 </div>
 
-
-  <div class="card-profile-container d-flex">
+<div class="card-location-container">
+  <div class="card-map-container">
+    <div style="width: 440px; height: 400px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+    <div class="card-profile-container d-flex">
     <% @sitter_profiles.each do |sitter_profile| %>
       <div class="card-profile">
         <div>
@@ -63,8 +69,4 @@
       </div>
     <% end %>
   </div>
-
-  <p>
-    <%# <%= link_to "See all Profiles", sitter_profiles_path %>
-  </p>
 </div>
