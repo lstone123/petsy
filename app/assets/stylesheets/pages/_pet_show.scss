@@ -1,0 +1,69 @@
+.super-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.pet-card-container {
+  overflow: hidden;
+  height: 400px;
+  background: #FC5185;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: left;
+  width: 750px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 25px;
+  margin: 15px;
+  display: flex;
+  align-self: flex-start;
+}
+
+.pet-card-container h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+.pet-card-container p {
+  font-size: 20px;
+  font-weight:normal;
+  margin: 0;
+  color: white;
+}
+
+.pet-card {
+  margin-top: 30px;
+}
+
+.pet-card-img {
+  margin-top: 30px;
+}
+
+.btn {
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #00C4CB;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #00C4CB;
+  text-decoration: none;
+}
+
+
+.pet-img-container {
+  display: flex;
+  overflow: hidden;
+  height: 400px;
+  background: #FC5185;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: left;
+  justify-content: center;
+  width: 400px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 25px;
+  margin: 15px;
+  align-self: flex-end;
+}
