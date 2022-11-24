@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-
   def show
+    @user = current_user
   end
 
   def edit
+    @user = current_user
   end
 
   def update
-    if @user.update(user_params)
+    @user = User.find(current_user.id)
+    if @user.update!(user_params)
       redirect_to user_path(@user)
     else
       render :new, status: :unprocessable_entity
@@ -21,10 +22,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :photo)

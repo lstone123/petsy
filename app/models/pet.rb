@@ -6,4 +6,5 @@ class Pet < ApplicationRecord
   validates :name, length: { maximum: 50 }
   validates :description, presence: true
   validates :requirements, presence: true
+  has_one_attached :photo
 end
