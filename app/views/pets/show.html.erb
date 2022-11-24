@@ -12,8 +12,7 @@
       <br>
       <%= link_to "Change your pet's details", edit_pet_path, class: "btn btn-success"%>
       <%= link_to "Remove this pet from your list",
-            user_path(current_user),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning"
+            pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-warning"
             %>
     </div>
   </div>
