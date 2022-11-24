@@ -11,13 +11,21 @@
       <p> <strong>Requirements:</strong>   <%= @pet.requirements %></p>
       <br>
       <%= link_to "Change your pet's details", edit_pet_path, class: "btn btn-success"%>
-      <%= link_to "View all your pets", pets_path, class: "btn btn-success"%>
+      <%= link_to "Remove this pet from your list",
+            user_path(current_user),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-warning"
+            %>
     </div>
   </div>
 
   <div class="pet-img-container">
-    <div>  <%= image_tag "dog.png", height: "100px"; %>  </div>
-    <div>  <%= image_tag "dog.png", height: "100px"; %>  </div>
-    <div>  <%= image_tag "dog.png", height: "100px"; %>  </div>
+
+    <div class="pet-image-top">
+      <%= image_tag "dog.png", height: "250px"; %>
+    </div>
+    <div class="pet-image-bottom">
+      <%= image_tag "dog.png", height: "100px"; %>
+      <%= image_tag "dog.png", height: "100px"; %>
+    </div>
   </div>
 </div>
