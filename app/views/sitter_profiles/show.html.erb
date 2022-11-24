@@ -1,25 +1,38 @@
-<div class="main">
-<div class="profile-info">
-<div class="profile-text">
-  <br>
-  <h2>Hey, I'm <%= @sitter_profile.user.first_name %> <%= @sitter_profile.user.last_name %></h2>
-  <br>
-  <p><%= @sitter_profile.address %></p>
-  <br>
-  <p> I can take care of the following animals: <%= @sitter_profile.species_preference %>
-  <p><h2>Bio</h2><%= @sitter_profile.description %></p>
+<div class="super-sitter-container">
+  <div class="sitter-container">
+    <div class="sitter-card">
+      <h2>Hey, I'm <%= @sitter_profile.user.first_name %> <%= @sitter_profile.user.last_name %></h2>
+      <hr class="sitter-line">
+      <p> <h2>Location:</h2> <%= @sitter_profile.address %></p>
+      <p> <h4>These are the animals I can look after:</h4>
+      <div class="pet-circle">
+        <% if @sitter_profile.species_preference == "cat" %>
+          <%= image_tag "cat.png", height: 40, width: 40, crop: :fill %>
+        <% elsif @sitter_profile.species_preference == "dog" %>
+          <%= image_tag "dog.png", height: 40, width: 40, crop: :fill %>
+        <% elsif @sitter_profile.species_preference == "bird" %>
+          <%= image_tag "parrot (2).png", height: 40, width: 40, crop: :fill %>
+        <% elsif @sitter_profile.species_preference == "reptile" %>
+          <%= image_tag "lizard.png", height: 40, width: 40, crop: :fill %>
+        <% end %>
+      </div>
+      <hr class="sitter-line">
+      <p><h4>Bio:</h4><%= @sitter_profile.description %></p>
+    </div>
+    <div class="sitter-img-container">
+      <% if @sitter_profile.user.photo.attached? %>
+        <%= cl_image_tag @sitter_profile.user.photo.key, height: 150, width: 150, crop: :fill %>
+      <% else %>
+        <%= image_tag "profile.png", height: 150, width: 150, crop: :fill %>
+      <% end %>
+      <div class="sitter-link-container">
+          <%# <%= link_to "Delete", sitter_profile_path(@sitter_profile),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <%# <%= link_to "Edit Profile", edit_sitter_profile_path %>
+        <div><%= link_to "See all Profiles", sitter_profiles_path, class: "btn btn-primary text-white" %></div>
+          <br>
+        <div><%= link_to "Book with #{@sitter_profile.user.first_name}",  new_sitter_profile_booking_path(@sitter_profile), class: "btn btn-primary text-white"%></div>
+      </div>
+    </div>
   </div>
-  </div>
-  <%= image_tag "profile.JPG", style: "width: 200px" %>
-</div>
-
-<div class="container">
-  <p>
-  <%# <%= link_to "Delete", sitter_profile_path(@sitter_profile),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-    <%# <%= link_to "Edit Profile", edit_sitter_profile_path %>
-    <div><%= link_to "See all Profiles", sitter_profiles_path, class: "btn btn-primary text-white" %></div>
-    <br>
-    <div><%= link_to "Book with #{@sitter_profile.user.first_name}",  new_sitter_profile_booking_path(@sitter_profile), class: "btn btn-primary text-white"%></div>
-  </p>
 </div>
