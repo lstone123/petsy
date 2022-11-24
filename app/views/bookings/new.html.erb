@@ -2,8 +2,8 @@
 
 <%= simple_form_for [@pet_sitter, @booking] do |f| %>
   <%= f.input :owner_message %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date as: :date, html5: true %>
+  <%= f.input :end_date as: :date, html5: true %>
   <%= f.button :submit %>
   <% end %>
 
