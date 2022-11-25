@@ -29,6 +29,7 @@
   position: absolute;
   right: 20px;
   bottom: 10px;
+  text-decoration: none;
 }
 
 .bookings-container {
@@ -40,16 +41,16 @@
   margin-right: 20px;
 }
 
-.booking-card .btn-green {
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  text-decoration: none;
-  background: #3FC1C9;
-  border-radius: 5px;
-  padding: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
+// .booking-card .btn-green {
+//   color: white;
+//   font-weight: bold;
+//   font-size: 14px;
+//   text-decoration: none;
+//   background: #3FC1C9;
+//   border-radius: 5px;
+//   padding: 5px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// }
 
 .booking-card a {
   font-size: 14px;

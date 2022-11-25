@@ -1,41 +1,46 @@
 <div class="louise-container">
   <h1>Manage your booking with
     <% if current_user.sitter == true %>
-      owner, <%= @owner.first_name %> <%= @owner.last_name %>
+       <%= @owner.first_name %> <%= @owner.last_name %>
     <% else %>
-      pet sitter, <%=@pet_sitter.user.first_name %> <%= @pet_sitter.user.last_name %>
+       <%=@pet_sitter.user.first_name %> <%= @pet_sitter.user.last_name %>
     <% end %>
   </h1>
+  <hr class=“sitter-line-green”>
 
-
-  <%= simple_form_for [@pet_sitter, @booking] do |f| %>
-    <div><% if current_user.sitter == true %>
-        <div><%= "Owner Name:" %>
-          <%= @owner.first_name %> <%= @owner.last_name %></div>
-        <div><%= "Owner Message:" %>
-          <%= @booking.owner_message %></div>
-        <div><%= "Booking Start Date:" %>
-          <%= @booking.start_date %></div>
-        <div><%= "Booking End Date:" %>
-          <%= @booking.end_date %></div>
-        <%= f.input :sitter_message %>
-        <%= f.button :submit %>
-        <%= link_to "Go back", booking_path(@booking) %>
-      </div>
-    <% else %>
+    <%= simple_form_for [@pet_sitter, @booking] do |f| %>
       <div>
-        <%= f.input :owner_message %>
-        <p><%= "Sitter Message:" %>
-          <%= @booking.sitter_message %></p>
-        <div><i class="fa-regular fa-calendar"></i>
-          <%= @booking.start_date %> - <%= @booking.end_date %></div>
-        <%= f.input :confirmed %>
-        <%= f.button :submit %>
-        <%= link_to "Go back", booking_path(@booking) %>
+        <% if current_user.sitter == true %>
+          <div><%= "Owner Name:" %>
+            <%= @owner.first_name %> <%= @owner.last_name %></div>
+          <div><%= "Owner Message:" %>
+            <%= @booking.owner_message %></div>
+          <div><%= "Booking Start Date:" %>
+            <%= @booking.start_date %></div>
+          <div><%= "Booking End Date:" %>
+            <%= @booking.end_date %></div>
+          <%= f.input :sitter_message %>
+          <%= f.button :submit %>
+          <%= link_to "Go back", booking_path(@booking) %>
       </div>
+      <% else %>
+        <div>
+          <b><%= f.input :owner_message %></b>
+          <p><b><%= "Sitter Message:" %></b>
+          <br>
+            <%= @booking.sitter_message %></p>
+          <div><i class="fa-regular fa-calendar"></i>
+            <%= @booking.start_date %> - <%= @booking.end_date %></div>
+          <br>
+          <%= f.input :confirmed, label: "Check to confirm booking" %>
+          <div class="edit-form-btn-container">
+            <%= f.button :submit %>
+            <%= link_to "Go back", booking_path(@booking), class: "btn-pink-light-fontweight" %>
+          </div>
+        </div>
+        <% end %>
       <% end %>
-    <% end %>
-</div>
+  </div>
 </div>
 <div class="edit-booking-page-banner-container">
     <div class="edit-booking-page-banner"></div>

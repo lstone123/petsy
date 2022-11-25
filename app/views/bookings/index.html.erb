@@ -4,9 +4,9 @@
     <% @bookings.each do |booking| %>
     <div class="bookings-card">
       <%if !current_user.sitter %>
-        <p>Pet Sitter: <%= booking.sitter_profile.user.first_name %> <%= booking.sitter_profile.user.last_name %></p>
+        <p><b>Pet Sitter: </b><%= booking.sitter_profile.user.first_name %> <%= booking.sitter_profile.user.last_name %></p>
         <p><i class="fa-regular fa-calendar"></i> <%= booking.start_date %> <%= booking.end_date %></p>
-        <p>Booking confirmed?
+        <p><b>Booking confirmed? </b>
           <% if booking.confirmed? %>
             <i class="fa-regular fa-square-check"></i>
           <% else %>
@@ -14,17 +14,16 @@
         </p>
           <% end %>
         <div>
+        <hr class=“sitter-line”>
           <%= link_to "view this booking", booking_path(booking), class: "btn-green-light-fontweight" %>
-          <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" }, class: "btn-delete"  do %>
-            <i class="fa-regular fa-trash"></i>
-          <% end %>
+          <%= link_to "🗑", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" }, class: "btn-delete" %>
         </div>
       <% else %>
-        <p>Owner Name: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-        <p>Owner Message: <%= booking.owner_message %></p>
+        <p><b>Owner Name: </b><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+        <p><b>Owner Message: </b><%= booking.owner_message %></p>
         <p></p><i class="fa-regular fa-calendar"></i> <%= booking.start_date %> <%= booking.end_date %></p>
-        <p>Response: <%= booking.sitter_message %></p>
-        <p>Booking confirmed?
+        <p><b>Response: </b><%= booking.sitter_message %></p>
+        <p><b>Booking confirmed? </b>
           <% if booking.confirmed? %>
             <i class="fa-regular fa-square-check"></i>
           <% else %>

@@ -1,4 +1,4 @@
-<div class="louise-container ">
+<div class="louise-container">
   <h1>Change your pet's details</h1>
 
   <%= simple_form_for(@pet) do |f| %>
@@ -8,7 +8,7 @@
     <%= f.input :description %>
     <%= f.input :requirements %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit class: "btn-green-bold-lightweight" %>
+    <%= f.submit class: "btn-green-light-fontweight" %>
   <% end %>
 
   <div class="pet-booking-buttons-container">
