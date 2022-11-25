@@ -32,7 +32,6 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
-
   .btn-green-light-fontweight {
       color: white;
       font-size: 14px;
@@ -41,4 +40,7 @@
       border-radius: 5px;
       padding: 5px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      // &.hover {
+      // background: #2c8c91;
+      // }
   }

@@ -29,9 +29,9 @@
           <%# <%= link_to "Delete", sitter_profile_path(@sitter_profile),
           data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           <%# <%= link_to "Edit Profile", edit_sitter_profile_path %>
-        <div><%= link_to "See all Profiles", sitter_profiles_path, class: "btn btn-primary text-white" %></div>
+        <div><%= link_to "Back to Search", sitter_profiles_path, class: "btn-pink-light-fontweight" %></div>
           <br>
-        <div><%= link_to "Book with #{@sitter_profile.user.first_name}",  new_sitter_profile_booking_path(@sitter_profile), class: "btn btn-primary text-white"%></div>
+        <div><%= link_to "Book with #{@sitter_profile.user.first_name}",  new_sitter_profile_booking_path(@sitter_profile), class: "btn-green-light-fontweight"%></div>
       </div>
     </div>
   </div>
