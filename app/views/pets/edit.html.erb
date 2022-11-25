@@ -1,12 +1,19 @@
-<h1>Change your pet's details</h1>
+<div class="louise-container ">
+  <h1>Change your pet's details</h1>
 
-<%= simple_form_for(@pet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :species, collection: %w(dog cat bird reptile) %>
-  <%= f.input :age %>
-  <%= f.input :description %>
-  <%= f.input :requirements %>
-  <%= f.submit class: "btn btn-success" %>
-<% end %>
+  <%= simple_form_for(@pet) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :species, collection: %w(dog cat bird reptile) %>
+    <%= f.input :age %>
+    <%= f.input :description %>
+    <%= f.input :requirements %>
+    <%= f.submit class: "btn btn-success" %>
+  <% end %>
 
-<%= link_to "View all your pets", pets_path, class: "btn btn-success"%>
+  <div class="pet-booking-buttons-container">
+    <%= link_to "Cancel", pet_path, class: "btn btn-primary" %>
+    <%= link_to "Remove this pet from your list",
+          pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary"
+          %>
+  </div>
+</div>
