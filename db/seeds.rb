@@ -27,6 +27,9 @@ sitter3 = User.create(email: 'testemail6@test.com', password: 123456, first_name
 puts "I am creating a new user"
 sitter4 = User.create(email: 'testemail7@test.com', password: 123456, first_name: 'Ziggy', last_name: 'Bartkevicius', sitter: true)
 puts "I am creating a new user"
+sitter5 = User.create(email: 'testemail8@test.com', password: 123456, first_name: 'Marco', last_name: 'Ricci', sitter: true)
+puts "I am creating a new user"
+
 
 Pet.create(description: "2 year old German Shepherd called Laura. She's very friendly and well socialised with other dogs. Will love cuddles all day!", species: "dog", age: "2", requirements: "none", name: "Laura", user_id: dog_owner.id)
 puts "I am creating a new pet"
@@ -46,4 +49,6 @@ puts "I am creating a new sitter"
 SitterProfile.create(user_id: sitter3.id, species_preference: "bird", description: "I have a macau called Nigel who is 22 years old so I'm very familiar with any special needs that your bird may have. I'm based in Windsor so please feel free to reach out if you're local.", address: "Windsor Castle")
 puts "I am creating a new sitter"
 SitterProfile.create(user_id: sitter4.id, species_preference: "dog", description: "Hi my names Ziggy. I have looked after dogs for 3 years and would love to look after your pet!")
+puts "I am creating a new sitter"
+SitterProfile.create(user_id: sitter5.id, species_preference: "reptile", description: "Hi, my name is Marco. I look after snakes on the daily.", address: "Warwick Castle")
 puts "I am creating a new sitter"

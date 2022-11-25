@@ -14,7 +14,7 @@
         </p>
           <% end %>
         <div>
-          <%= link_to "view this booking", booking_path(booking), class: "btn-green" %>
+          <%= link_to "view this booking", booking_path(booking), class: "btn-green-light-fontweight" %>
           <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" }, class: "btn-delete"  do %>
             <i class="fa-regular fa-trash"></i>
           <% end %>
@@ -32,7 +32,7 @@
           </p>
           <% end %>
         <div>
-          <%= link_to "view this booking", booking_path(booking), class: "btn-green" %>
+          <%= link_to "view this booking", booking_path(booking), class: "btn-green-light-fontweight" %>
           <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" }, class: "btn-delete"  do %>
             <i class="fa-regular fa-trash"></i>
           <% end %>
