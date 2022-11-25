@@ -1,42 +1,49 @@
-<div class="louise-container">
-  <h1>Your booking with
-    <% if current_user.sitter == true  %>
-    <%= @booking.user.first_name %> <%= @booking.user.last_name %>
-    <% else %>
-      <%= @booking.sitter_profile.user.first_name %> <%= @booking.sitter_profile.user.last_name %>
-    <% end %>
-  </h1>
+<div class="super-book-container">
+  <div class="book-container">
+    <div class="louise-container">
+      <h1>Your booking with
+        <% if current_user.sitter == true  %>
+        <%= @booking.user.first_name %> <%= @booking.user.last_name %>
+        <% else %>
+          <%= @booking.sitter_profile.user.first_name %> <%= @booking.sitter_profile.user.last_name %>
+        <% end %>
+      </h1>
+      <hr class="sitter-line">
+      <div>
+        <% if current_user.sitter == true %>
+            <p>Owner name: <%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
+            <p>Owner message: <%= @booking.owner_message %></p>
+            <p><i class="fa-regular fa-calendar"></i> <%= @booking.start_date %> - <%= @booking.end_date %></p>
+            <p>Your response: <%= @booking.sitter_message %></p>
+            <p>Owner confirmed?
+              <% if @booking.confirmed? %>
+                <i class="fa-regular fa-square-check"></i>
+              <% else %>
+                <i class="fa-regular fa-square"></i>
+            </p>
+              <% end %>
+            <%= link_to "Update this booking", edit_sitter_profile_booking_path(@booking.sitter_profile.user) %>
+            <%= link_to "Go back to all bookings", bookings_path %>
+        <% else %>
+          <p><strong>Pet sitter name:</strong> <%= @booking.sitter_profile.user.first_name %> <%= @booking.sitter_profile.user.last_name %></p>
+          <p><i class="fa-regular fa-calendar"></i> <%= @booking.start_date %> - <%= @booking.end_date %></p>
+          <p><strong>Your message:</strong> <%= @booking.owner_message %></p>
+          <p><strong>Sitter message:</strong> <%= @booking.sitter_message %></p>
+          <p><strong>Booking confirmed?</strong>
+              <% if @booking.confirmed? %>
+                <i class="fa-regular fa-square-check"></i>
+              <% else %>
+                <i class="fa-regular fa-square"></i>
+            </p>
+              <% end %>
+            <hr class="sitter-line">
+            <br>
+            <%= link_to "Update this booking", edit_sitter_profile_booking_path(@booking.sitter_profile), class: "btn-green", style: "margin:5px" %>
 
-  <div>
-    <% if current_user.sitter == true %>
-        <p>Owner name: <%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
-        <p>Owner message: <%= @booking.owner_message %></p>
-        <p><i class="fa-regular fa-calendar"></i> <%= @booking.start_date %> - <%= @booking.end_date %></p>
-        <p>Your response: <%= @booking.sitter_message %></p>
-        <p>Owner confirmed?
-          <% if @booking.confirmed? %>
-            <i class="fa-regular fa-square-check"></i>
-          <% else %>
-            <i class="fa-regular fa-square"></i>
-        </p>
-          <% end %>
-        <%= link_to "Update this booking", edit_sitter_profile_booking_path(@booking.sitter_profile.user) %>
-        <%= link_to "Go back to all bookings", bookings_path %>
-    <% else %>
-      <p>Pet sitter name: <%= @booking.sitter_profile.user.first_name %> <%= @booking.sitter_profile.user.last_name %></p>
-      <p><i class="fa-regular fa-calendar"></i> <%= @booking.start_date %> - <%= @booking.end_date %></p>
-      <p>Your message: <%= @booking.owner_message %></p>
-      <p>Sitter message: <%= @booking.sitter_message %></p>
-      <p>Booking confirmed?
-          <% if @booking.confirmed? %>
-            <i class="fa-regular fa-square-check"></i>
-          <% else %>
-            <i class="fa-regular fa-square"></i>
-        </p>
-          <% end %>
-        <%= link_to "Update this booking", edit_sitter_profile_booking_path(@booking.sitter_profile), class: "btn-green" %>
-        <%= link_to "Go back to all bookings", bookings_path %>
-      <p><%= @booking.completed %></p>
-    <% end %>
+            <%= link_to "Go back to all bookings", bookings_path, class: "btn-green", style: "margin:5px"  %>
+          <p><%= @booking.completed %></p>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

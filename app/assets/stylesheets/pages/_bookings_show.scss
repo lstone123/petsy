@@ -1,23 +1,21 @@
-.bookings-container {
+.super-book-container {
   display: flex;
-  flex: wrap;
+  justify-content: center;
+  background-image: url('bubbs.png');
 }
 
-.booking-card {
-  margin-right: 20px;
-}
-
-.booking-card .btn-green {
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  text-decoration: none;
-  background: #3FC1C9;
-  border-radius: 5px;
-  padding: 5px;
+.book-container {
+  background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 800px;
+  margin: 15px;
+  padding: 17px;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-bottom: 5px;
+  border-radius: 10px;
 }
 
-.booking-card a {
-  font-size: 14px;
+.book-container p {
+   margin: 20px
 }
