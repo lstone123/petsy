@@ -1,6 +1,6 @@
 //overall page container
 .super-container {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -12,6 +12,7 @@
 .pet-image-desc-container {
   display: flex;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 550px;
   flex-direction: column;
   background-color: white;
   border-radius: 10px;
@@ -22,7 +23,7 @@
 }
 
 .pet-card-container {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: white;
   border-radius: 10px;
   display: flex;
@@ -30,8 +31,9 @@
   padding: 15px;
   justify-content: space-between;
   align-content: center;
-  margin: 10px 10px 20px 10px;
+  margin: 10px 10px 10px 10px;
 }
+
 
 .pet-card-container h1 {
   font-size: 30px;
@@ -57,12 +59,21 @@
 }
 
 .pet-description-buttons-container {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   flex-direction: column;
   background-color: white;
   justify-content: space-between;
   margin: 10px 10px 20px 10px;
+}
+
+.pet-booking-buttons-container {
+  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: white;
+  justify-content: space-between;
+  margin: 10px 10px 10px 0px;
 }
 
 .btn:hover {

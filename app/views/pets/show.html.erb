@@ -13,7 +13,8 @@
   </div>
     <div class="pet-description-buttons-container">
       <%= link_to "Change your pet's details", edit_pet_path, class: "btn btn-primary"%>
-      <%= link_to "Remove this pet from your list",
+      <%= link_to "Back to my profile", user_path, class: "btn btn-primary"%>
+      <%# <%= link_to "Remove this pet from your list",
             pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary"
             %>
     </div>
