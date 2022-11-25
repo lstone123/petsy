@@ -6,7 +6,7 @@
     <% if current_user.photo.attached? %>
       <%= cl_image_tag current_user.photo.key, height: 300, width: 300, crop: :fill %>
     <% else %>
-      <%= image_tag "https://as2.ftcdn.net/v2/jpg/01/18/03/35/1000_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg", height: 300, width: 300, crop: :fill %>
+      <%= image_tag "placeholderprofile.jpg", height: 200, width: 200, crop: :fill %>
     <% end %>
 
       <div class="user-profile-about-me-text">
