@@ -47,7 +47,14 @@
 <% end %>
 
 <div class="location-search-card-container">
-    <div class="location-search-box"> input location search here </div>
+    <div
+      class="location-search-box"
+      data-controller="address-autocomplete"
+      data-address-autocomplete-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-address-autocomplete-placeholder-value="<%= params[:address] %>"
+    >
+      <%= text_field_tag 'address', nil, class: 'd-none', data: {address_autocomplete_target: "address"} %>
+    </div>
     <div class="search-button"><%= submit_tag "Search", class: "btn btn-primary" %> </div>
 </div>
 

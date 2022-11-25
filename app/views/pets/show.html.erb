@@ -1,30 +1,40 @@
+
+<div class="container">
 <div class="super-container">
-  <div class="pet-card-container">
-    <div class="pet-card-img">
-    <%= image_tag "dog.png" %>
-    </div>
-    <div class="pet-card">
+  <div class="pet-image-desc-container">
+    <div class="pet-card-container">
+    <div class="pet-description-card">
       <h1>Name: <%= @pet.name %></h1>
       <p><strong>Species:</strong> <%= @pet.species %></p>
       <p><strong>Age:</strong> <%= @pet.age %></p>
       <p> <strong>Description:</strong> <%= @pet.description %></p>
       <p> <strong>Requirements:</strong>   <%= @pet.requirements %></p>
-      <br>
-      <%= link_to "Change your pet's details", edit_pet_path, class: "btn btn-success"%>
+    </div>
+  </div>
+    <div class="pet-description-buttons-container">
+      <%= link_to "Change your pet's details", edit_pet_path, class: "btn btn-primary"%>
       <%= link_to "Remove this pet from your list",
-            pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-warning"
+            pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary"
             %>
     </div>
   </div>
 
   <div class="pet-img-container">
-
-    <div class="pet-image-top">
-      <%= image_tag "dog.png", height: "250px"; %>
+    <div class="pet-image-top-container">
+      <div class="pet-image-top">
+        <%= image_tag "parrot.png", height: "150px";  %>
+      </div>
     </div>
     <div class="pet-image-bottom">
-      <%= image_tag "dog.png", height: "100px"; %>
-      <%= image_tag "dog.png", height: "100px"; %>
+      <%= image_tag "parrot.png", height: "80px"; %>
+      <%= image_tag "parrot.png", height: "80px"; %>
+      <%= image_tag "parrot.png", height: "80px"; %>
     </div>
   </div>
+
 </div>
+</div>
+
+  <div class="pet-page-banner-container">
+    <div class="pet-page-banner"></div>
+  </div>

@@ -1,7 +1,12 @@
 <div class="louise-container">
   <h1><b>My Profile</b></h1>
   <div class="about-me-card d-flex">
+  <% if current_user.photo.attached? %>
     <%= cl_image_tag current_user.photo.key, height: 300, width: 300, crop: :fill %>
+  <% else %>
+    <%= image_tag "https://as2.ftcdn.net/v2/jpg/01/18/03/35/1000_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg", height: 300, width: 300, crop: :fill %>
+  <% end %>
+
     <div class="user-profile-about-me-text">
     <h2><b><%= @user.first_name %> <%= @user.last_name %></b></h2>
       <p><b>About Me:</b></p>
@@ -17,7 +22,7 @@
           <% if pet.photo.attached? %>
             <%= cl_image_tag pet.photo.key, height: 110, width: 110, crop: :fill %>
           <% else %>
-            <%= image_tag "placeholder-animal-avatar.jpeg", height: 110, width: 110, crop: :fill %>
+            <%= image_tag "placeholder-animal-avatar.png", height: 110, width: 110, crop: :fill %>
           <% end %>
           <div class="d-flex flex-wrap justify-content-between mt-4">
             <div class="align-self-center">
