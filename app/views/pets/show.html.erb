@@ -23,13 +23,27 @@
   <div class="pet-img-container">
     <div class="pet-image-top-container">
       <div class="pet-image-top">
-        <%= image_tag "parrot.png", height: "150px";  %>
+          <% if @pet.photos.attached? %>
+            <%# <%@pet.photo.each do |photo|  %>
+              <%= cl_image_tag @pet.photos[0].key, height: "150px"; %>
+            <%# <% end %>
+          <% else %>
+              <%= image_tag "parrot.png", height: "150px";  %>
+          <% end %>
       </div>
     </div>
     <div class="pet-image-bottom">
-      <%= image_tag "parrot.png", height: "80px"; %>
-      <%= image_tag "parrot.png", height: "80px"; %>
-      <%= image_tag "parrot.png", height: "80px"; %>
+      <% if @pet.photos.length >= 4 %>
+        <%# <%@pet.photo.each do |photo|  %>
+          <%= cl_image_tag @pet.photos[1].key, height: "80px"; %>
+          <%= cl_image_tag @pet.photos[2].key, height: "80px"; %>
+          <%= cl_image_tag @pet.photos[3].key, height: "80px"; %>
+        <%# <% end %>
+      <% else %>
+        <%= image_tag "parrot.png", height: "80px"; %>
+        <%= image_tag "parrot.png", height: "80px"; %>
+        <%= image_tag "parrot.png", height: "80px"; %>
+      <% end %>
     </div>
   </div>
 

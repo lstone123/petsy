@@ -19,8 +19,8 @@
     <div class="d-flex">
         <% @user.pets.each do |pet| %>
         <div class="user-profile-pet-card">
-          <% if pet.photo.attached? %>
-            <%= cl_image_tag pet.photo.key, height: 110, width: 110, crop: :fill %>
+          <% if pet.photos.attached? %>
+            <%= cl_image_tag pet.photos[0].key, height: 110, width: 110, crop: :fill %>
           <% else %>
             <%= image_tag "placeholder-animal-avatar.png", height: 110, width: 110, crop: :fill %>
           <% end %>
