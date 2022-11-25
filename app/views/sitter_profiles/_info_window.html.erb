@@ -1,4 +1,6 @@
-<div style="padding: 0px; margin: 0px; spacing: 0px;">
+<div>
   <br>
+  <%= sitter_profile.user.first_name %>
   <p><%= sitter_profile.address %></p>
+  <p><%= link_to 'View details', sitter_profile_path(sitter_profile), class: "btn btn-primary" %></p>
 </div>
