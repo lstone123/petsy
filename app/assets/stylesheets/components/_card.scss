@@ -4,6 +4,17 @@
   max-width: 1000px;
 }
 
+
+// banner
+.home-page-banner-container{
+  height: 200px;
+}
+.home-page-banner {
+  background-image: url("pets banner.png");
+  background-size: cover;
+  height: 200px;
+}
+
 // intro line
 .intro-description-h2 {
   display: flex;
