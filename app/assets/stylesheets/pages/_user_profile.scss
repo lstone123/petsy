@@ -1,5 +1,6 @@
 .super-user-container {
   background-image: url('bubbs.png');
+  padding-bottom: 20px;
 }
 
 .about-me-card {
@@ -47,15 +48,19 @@
   border-radius: 10%;
 }
 
-.user-profile-pet-card a {
-  color: white;
-  font-size: 14px;
-  text-decoration: none;
-  background: #3FC1C9;
-  border-radius: 5px;
-  padding: 3px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.user-profile-pet-card .btn-green-light-fontweight {
+  font-weight: 500;
 }
+
+// .user-profile-pet-card a {
+//   color: white;
+//   font-size: 14px;
+//   text-decoration: none;
+//   background: #3FC1C9;
+//   border-radius: 5px;
+//   padding: 3px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+// }
 
 .pet-btn {
   padding: 10px;

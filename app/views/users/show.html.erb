@@ -8,7 +8,7 @@
       <%= cl_image_tag current_user.photo.key, height: 200, width: 200, crop: :fill %>
     <% else %>
       <%= image_tag "placeholderprofile.jpg", height: 200, width: 200, crop: :fill %>
-
+    <% end %>
 
       <div class="user-profile-about-me-text">
       <h2><b><%= @user.first_name %> <%= @user.last_name %></b></h2>
@@ -50,7 +50,7 @@
                     <%= image_tag "lizard.png", height: 40, width: 40, crop: :fill %>
                   <% end %>
                 </div>
-                <%= link_to "more info", pet_path(pet) %>
+                <%= link_to "more info", pet_path(pet), class: "btn-green-light-fontweight" %>
               </div>
             </div>
           </div>

@@ -1,14 +1,19 @@
 <div class="louise-container">
-  <h1>Add your pet</h1>
-  <%= simple_form_for(@pet) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :species, collection: %w(dog cat bird reptile) %>
-    <%= f.input :age %>
-    <%= f.input :description %>
-    <%= f.input :requirements %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
-    <%= f.submit class: "btn btn-primary" %>
-  <% end %>
+  <div class="form-styling-container">
+    <h1>Add your pet</h1>
+    <%= simple_form_for(@pet) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :species, collection: %w(dog cat bird reptile) %>
+      <%= f.input :age %>
+      <%= f.input :description %>
+      <%= f.input :requirements %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
 
-      <%= link_to "Back to my profile", user_path(current_user), class: "btn-pink-light-fontweight" %>
+        <%= link_to "Back to my profile", user_path(current_user), class: "btn-pink-light-fontweight" %>
+  </div>
+</div>
+<div class="edit-user-page-banner-container">
+  <div class="edit-user-page-banner"></div>
 </div>

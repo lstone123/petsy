@@ -11,6 +11,7 @@
 // pet show page bottom banner
 
 .pet-page-banner-container{
+  margin-top: 100px;
   height: 100px;
 }
 .pet-page-banner {
@@ -23,6 +24,8 @@
 
 .booking-page-banner-container{
   height: 100px;
+  // position: absolute;
+  // bottom:0;
 }
 .booking-page-banner {
   background-image: url("happy dog bottom banner.png");
@@ -56,6 +59,7 @@
 // edit users page bottom banner
 
 .edit-user-page-banner-container{
+  margin-top: 150px;
   height: 200px;
 }
 .edit-user-page-banner {
