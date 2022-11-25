@@ -7,8 +7,8 @@ class SitterProfilesController < ApplicationController
   # end
 
   def index
-    if params[:animal].present?
-      @sitter_profiles = SitterProfile.where(species_preference: params[:animal])
+    if params[:animal].present? && params[:address].present?
+      @sitter_profiles = SitterProfile.near(params[:address], 25).where(species_preference: params[:animal])
       @markers = @sitter_profiles.geocoded.map do |sitter_profile|
         {
           lat: sitter_profile.latitude,
