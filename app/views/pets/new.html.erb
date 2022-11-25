@@ -5,7 +5,7 @@
   <%= f.input :age %>
   <%= f.input :description %>
   <%= f.input :requirements %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
   <%= f.submit class: "btn btn-success" %>
 <% end %>
 
