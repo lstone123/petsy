@@ -1,39 +1,42 @@
-<h1>My Bookings</h1>
-
-<div>
-  <% @bookings.each do |booking| %>
-    <%if current_user.sitter == false %>
-      <p>Pet Sitter Name: <%= booking.sitter_profile.user.first_name %> <%= booking.sitter_profile.user.last_name %></p>
-      <p>Start date: <%= booking.start_date %></p>
-      <p>End date: <%= booking.end_date %></p>
-      <p>Booking confirmed?
-        <% if booking.confirmed? %>
-          <%= "☑️" %>
-        <% else %>
-          <%= "🔲" %>
-      </p>
-        <% end %>
-      <div>
-        <%= link_to "view this booking", booking_path(booking) %>
-        <%= link_to "delete this booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" } %>
-      </div>
-    <% else %>
-      <p>Owner Name: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-      <p>Owner Message: <%= booking.owner_message %></p>
-      <p>Start date: <%= booking.start_date %></p>
-      <p>End date: <%= booking.end_date %></p>
-      <p>Response: <%= booking.sitter_message %></p>
-      <p>Booking confirmed?
-        <% if booking.confirmed? %>
-          <%= "☑️" %>
-        <% else %>
-          <%= "🔲" %>
+<div class="louise-container">
+  <h1>My Bookings</h1>
+  <div class="bookings-container">
+    <% @bookings.each do |booking| %>
+    <div class="bookings-card">
+      <%if !current_user.sitter %>
+        <p>Pet Sitter Name: <%= booking.sitter_profile.user.first_name %> <%= booking.sitter_profile.user.last_name %></p>
+        <p><i class="fa-regular fa-calendar"></i><%= booking.start_date %> <%= booking.end_date %></p>
+        <p>Booking confirmed?
+          <% if booking.confirmed? %>
+            <i class="fa-regular fa-square-check"></i>
+          <% else %>
+            <i class="fa-regular fa-square"></i>
         </p>
-        <% end %>
-      <div>
-        <%= link_to "view this booking", booking_path(booking) %>
-        <%= link_to "delete this booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" } %>
-      </div>
+          <% end %>
+        <div>
+          <%= link_to "view this booking", booking_path(booking), class: "btn-green" %>
+          <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" }, class: "btn-delete"  do %>
+            <i class="fa-light fa-trash"></i>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Owner Name: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+        <p>Owner Message: <%= booking.owner_message %></p>
+        <p></p><i class="fa-regular fa-calendar"></i><%= booking.start_date %> <%= booking.end_date %></p>
+        <p>Response: <%= booking.sitter_message %></p>
+        <p>Booking confirmed?
+          <% if booking.confirmed? %>
+            <i class="fa-regular fa-square-check"></i>
+          <% else %>
+            <i class="fa-regular fa-square"></i>
+          </p>
+          <% end %>
+        <div>
+          <%= link_to "view this booking", booking_path(booking), class: "btn-green" %>
+          <%= link_to "delete this booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" }, class: "btn-delete" %>
+        </div>
+      <% end %>
+    </div>
     <% end %>
-  <% end %>
+  </div>
 </div>

@@ -1,3 +1,27 @@
+.about-me-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  border-radius: 16px;
+  position:relative;
+}
+
+.about-me-card img {
+  border-radius: 20px;
+}
+
+.user-profile-about-me-text {
+  padding: 20px;
+}
+
+.about-me-card a {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
 .user-profile-pet-card {
   width: 250px;
   height: 250px;
@@ -27,28 +51,4 @@
   border-radius: 5px;
   padding: 3px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.about-me-card {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 20px;
-  border-radius: 16px;
-  position:relative;
-}
-
-.about-me-card img {
-  border-radius: 20px;
-}
-
-.user-profile-about-me-text {
-  padding: 20px;
-}
-
-.about-me-card a {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
 }
