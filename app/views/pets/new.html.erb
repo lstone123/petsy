@@ -9,5 +9,6 @@
     <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
     <%= f.submit class: "btn btn-primary" %>
   <% end %>
-</div>
 
+      <%= link_to "Back to my profile", user_path(current_user), class: "btn-pink-light-fontweight" %>
+</div>
