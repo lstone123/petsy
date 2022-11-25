@@ -55,7 +55,7 @@
     >
       <%= text_field_tag 'address', nil, class: 'd-none', data: {address_autocomplete_target: "address"} %>
     </div>
-    <div class="search-button"><%= submit_tag "Search", class: "btn btn-primary" %> </div>
+    <div class="search-button"><%= submit_tag "Search", class: "btn btn-primary text-white"%> </div>
 </div>
 
 <div class="card-location-container">
@@ -67,13 +67,15 @@
     </div>
   </div>
     <div class="card-profile-container d-flex">
-    <% @sitter_profiles.each do |sitter_profile| %>
-      <div class="card-profile">
-        <div>
-          <%= link_to sitter_profile.user.first_name, sitter_profile_path(sitter_profile) %>
+      <% @sitter_profiles.each do |sitter_profile| %>
+        <%= link_to sitter_profile_path(sitter_profile) do %>
+        <div class="card-profile" >
+          <div>
+            <%= sitter_profile.user.first_name %>
           <div class="profile-location"><p><%= sitter_profile.address %></p> <%= image_tag "placeholder.png" %></div>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>
