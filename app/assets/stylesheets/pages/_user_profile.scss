@@ -1,3 +1,7 @@
+.super-user-container {
+  background-image: url('bubbs.png');
+}
+
 .about-me-card {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -51,4 +55,24 @@
   border-radius: 5px;
   padding: 3px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.pet-btn {
+  padding: 10px;
+}
+
+.pet-btn .btn-green-light-fontweight {
+  padding: 13px;
+  background-color: #FC5185;
+}
+
+.pet-block {
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.pet-block h2 {
+  padding: 5px;
 }
