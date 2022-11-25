@@ -13,7 +13,7 @@ class SitterProfilesController < ApplicationController
         {
           lat: sitter_profile.latitude,
           lng: sitter_profile.longitude,
-          infoWindow: { content: render_to_string(partial: "map_info_window", locals: { sitter_profile: sitter_profile }) }
+          info_window: render_to_string(partial: "info_window", locals: { sitter_profile: sitter_profile })
         }
       end
     else
@@ -22,7 +22,7 @@ class SitterProfilesController < ApplicationController
         {
           lat: sitter_profile.latitude,
           lng: sitter_profile.longitude,
-          infoWindow: { content: render_to_string(partial: "map_info_window", locals: { sitter_profile: sitter_profile }) }
+          info_window: render_to_string(partial: "info_window", locals: { sitter_profile: sitter_profile })
         }
       end
     end
