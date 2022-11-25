@@ -8,13 +8,13 @@
     <%= f.input :description %>
     <%= f.input :requirements %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit class: "btn btn-success" %>
+    <%= f.submit class: "btn-green-bold-lightweight" %>
   <% end %>
 
   <div class="pet-booking-buttons-container">
-    <%= link_to "Cancel", pet_path, class: "btn btn-primary" %>
+    <%= link_to "Cancel", pet_path, class: "btn-pink-light-fontweight" %>
     <%= link_to "Remove this pet from your list",
-          pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-primary"
+          pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-pink-light-fontweight"
           %>
   </div>
 </div>

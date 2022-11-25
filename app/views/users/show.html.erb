@@ -1,51 +1,60 @@
-<div class="louise-container">
-  <h1><b>My Profile</b></h1>
-  <div class="about-me-card d-flex">
-  <% if current_user.photo.attached? %>
-    <%= cl_image_tag current_user.photo.key, height: 300, width: 300, crop: :fill %>
-  <% else %>
-    <%= image_tag "https://as2.ftcdn.net/v2/jpg/01/18/03/35/1000_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg", height: 300, width: 300, crop: :fill %>
-  <% end %>
+<div class="super-user-container">
+  <div class="louise-container">
+    <h1><b>My Profile</b></h1>
+    <hr class="sitter-line">
+    <div class="about-me-card d-flex">
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, height: 300, width: 300, crop: :fill %>
+    <% else %>
+      <%= image_tag "https://as2.ftcdn.net/v2/jpg/01/18/03/35/1000_F_118033506_uMrhnrjBWBxVE9sYGTgBht8S5liVnIeY.jpg", height: 300, width: 300, crop: :fill %>
+    <% end %>
 
-    <div class="user-profile-about-me-text">
-    <h2><b><%= @user.first_name %> <%= @user.last_name %></b></h2>
-      <p><b>About Me:</b></p>
-      <p><%= @user.bio %></p>
-      <%= link_to "Edit my profile", edit_user_path(@user) %>
+      <div class="user-profile-about-me-text">
+      <h2><b><%= @user.first_name %> <%= @user.last_name %></b></h2>
+      <hr class="sitter-line">
+        <p><b>About Me:</b></p>
+        <p><%= @user.bio %></p>
+        <%= link_to "Edit my profile", edit_user_path(@user) %>
+      </div>
     </div>
-  </div>
-  <div>
-    <h2><b>My Pets</b></h2>
-    <div class="d-flex">
-        <% @user.pets.each do |pet| %>
-        <div class="user-profile-pet-card">
-          <% if pet.photos.attached? %>
-            <%= cl_image_tag pet.photos[0].key, height: 110, width: 110, crop: :fill %>
-          <% else %>
-            <%= image_tag "placeholder-animal-avatar.png", height: 110, width: 110, crop: :fill %>
-          <% end %>
-          <div class="d-flex flex-wrap justify-content-between mt-4">
-            <div class="align-self-center">
-              <p>name: <%= pet.name %></p>
-              <p>age: <%= pet.age %></p>
-            </div>
-            <div class="align-self-center">
-              <div class="text-center">
-                <% if pet.species == "cat" %>
-                  <%= image_tag "cat.png", height: 40, width: 40, crop: :fill %>
-                <% elsif pet.species == "dog" %>
-                  <%= image_tag "dog.png", height: 40, width: 40, crop: :fill %>
-                <% elsif pet.species == "bird" %>
-                  <%= image_tag "parrot(2).png", height: 40, width: 40, crop: :fill %>
-                <% elsif pet.species == "reptile" %>
-                  <%= image_tag "lizard.png", height: 40, width: 40, crop: :fill %>
-                <% end %>
+    
+    <div>
+       <div class="pet-block" style="display: flex; justify-content: space-between;">
+         <h2><b>My Pets</b></h2>
+        <div class="pet-btn"><%= link_to "Add a pet", new_pet_path, class: "btn-green-light-fontweight"%></div>
+    </div>
+      <hr class="sitter-line">
+      <div class="d-flex">
+          <% @user.pets.each do |pet| %>
+          <div class="user-profile-pet-card">
+            <% if pet.photos.attached? %>
+              <%= cl_image_tag pet.photos.key, height: 110, width: 110, crop: :fill %>
+            <% else %>
+              <%= image_tag "placeholder-animal-avatar.png", height: 110, width: 110, crop: :fill %>
+            <% end %>
+            <div class="d-flex flex-wrap justify-content-between mt-4">
+              <div class="align-self-center">
+                <p>name: <%= pet.name %></p>
+                <p>age: <%= pet.age %></p>
               </div>
-              <%= link_to "more info", pet_path(pet) %>
+              <div class="align-self-center">
+                <div class="text-center">
+                  <% if pet.species == "cat" %>
+                    <%= image_tag "cat.png", height: 40, width: 40, crop: :fill %>
+                  <% elsif pet.species == "dog" %>
+                    <%= image_tag "dog.png", height: 40, width: 40, crop: :fill %>
+                  <% elsif pet.species == "bird" %>
+                    <%= image_tag "parrot(2).png", height: 40, width: 40, crop: :fill %>
+                  <% elsif pet.species == "reptile" %>
+                    <%= image_tag "lizard.png", height: 40, width: 40, crop: :fill %>
+                  <% end %>
+                </div>
+                <%= link_to "more info", pet_path(pet) %>
+              </div>
             </div>
           </div>
-        </div>
-        <% end %>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
