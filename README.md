@@ -1,1 +1,6 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# Petsy
+
+Live website: https://petsy-1052.herokuapp.com/
+
+### About the project
+
