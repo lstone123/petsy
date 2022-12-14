@@ -22,6 +22,7 @@ Cloudinary API
 
 Version control & deployment
 
+[GitHub]((https://github.com/lstone123/petsy))
 [GitHub(https://github.com/lstone123/petsy)]
 [Heroku(https://petsy-1052.herokuapp.com/)]
 
