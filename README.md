@@ -54,4 +54,4 @@ bin/rails db:setup
 bin/dev
 ```
 
-Our API keys are hidden. You will need to touch a .env file and add your own Mapbox and Cloudinary API keys.
+Our API keys are hidden. You will need to touch a .env file and add your own **Mapbox** and **Cloudinary** API keys.
