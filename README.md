@@ -28,8 +28,7 @@ Frameworks & libraries used to make Petsy
 - Mapbox API
 - Cloudinary API
 
-Version control & deployment
-
+Version control & deployment:
 [GitHub](https://github.com/lstone123/petsy) | 
 [Heroku](https://petsy-1052.herokuapp.com/)
 
