@@ -34,7 +34,6 @@ Version control & deployment:
 
 ### Installation
 
-#### Setup
 In order to run our app locally, you will need to have already installed Yarn and Rails. Check them with:
 
 ```
@@ -55,15 +54,4 @@ bin/rails db:setup
 bin/dev
 ```
 
-#### Dependencies
-You'll also need to install all dependencies of the project with:
-
-```
-$ bundle install && yarn install
-```
-
-The bundle command installs all Ruby Gems specified in our Gemfile. The yarn install command retrieves all dependencies from the project’s package.json file.
-
-#### API Keys
-Lastly, our API keys are hidden. You will need to touch a .env file and add your own Mapbox and Cloudinary API keys.
-
+Our API keys are hidden. You will need to touch a .env file and add your own Mapbox and Cloudinary API keys.
