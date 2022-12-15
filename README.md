@@ -28,7 +28,7 @@ Version control & deployment
 #### Installation
 We used Rails v7.0.4 and Ruby v3.1.2.
 
-git clone git@github.com:git@github.com:lstone123/petsy.git
+git clone git@github.com:lstone123/petsy.git
 cd 
 bundle
 yarn
