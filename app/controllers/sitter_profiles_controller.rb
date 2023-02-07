@@ -6,6 +6,8 @@ class SitterProfilesController < ApplicationController
   #   @sitter_profiles = SitterProfile.all
   # end
 
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     if params[:animal].present? && params[:address].present?
       @sitter_profiles = SitterProfile.near(params[:address], 25).where(species_preference: params[:animal])
